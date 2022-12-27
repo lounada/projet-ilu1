@@ -2,19 +2,26 @@ package gestion;
 import java.util.Scanner;
 
 
-public class Personne {
+abstract public  class Personne {
     protected String nom;
     protected String prenom;
     protected int age;
+    public static Scanner s=new Scanner(System.in);
 
     public Personne() {
-    	Scanner s = new Scanner(System.in);
-    	System.out.println("Donner le nom : ");
-        this.nom = s.nextLine();
-    	System.out.println("Donner le prenom : ");
-    	this.prenom = s.nextLine();
-    	System.out.println("Donner l'age : ");
-    	this.age = s.nextInt();
+    	try  {
+    		s.nextLine();
+			System.out.print("Donner le nom                : ");
+			this.nom = s.nextLine();
+			System.out.print("Donner le prenom             : ");
+			this.prenom = s.nextLine();
+			System.out.print("Donner l'age                 : ");
+			this.age = s.nextInt();
+			
+		}
+    	catch (Exception e) {
+    		System.err.print("erreur");
+    	}
     }
 
     public String getNom() {
@@ -28,6 +35,8 @@ public class Personne {
     public String getPrenom() {
         return prenom;
     }
+    public abstract  String getclassname();
+    public abstract  int getNum();
 
     public void setPrenom(String prenom) {
         this.prenom = prenom;
@@ -42,7 +51,7 @@ public class Personne {
     }
 
     public String toString() {
-        return "\nLe Nom : " + nom + "\nPrénom : " + prenom + "\nAge    : " + age+"ans\n";
+        return "\nLe Nom           : " + nom + "\nPrénom           : " + prenom + "\nAge              : " + age+" ans\n";
     }
 
 	public static void main(String[] args) {
@@ -50,5 +59,8 @@ public class Personne {
 
 
 	}
+
+	public abstract int getNumeroGroup();
+	public abstract void setNumeroGroup(int n);
 
 }
