@@ -10,6 +10,7 @@ public class Professeur extends Personne {
     private int numgroup;
 
     public Professeur() {
+    	//appel du constructeur de la class mere
         super();
         System.out.print("Donner le numero             : ");
 		this.numeroProfesseur = s.nextInt();
@@ -24,6 +25,8 @@ public class Professeur extends Personne {
     public int getNumeroGroup() {
         return numgroup;
     }
+
+	//redefinition de la methode getNom pour quel il return le numero du prof
     @Override
     public int getNum() {
     	return this.numeroProfesseur;
@@ -33,11 +36,13 @@ public class Professeur extends Personne {
         this.numgroup = numgroup;
     }
 
+	//redefinition de la methode toString
     @Override
    public String toString() {
         return "\n\t------------------------\nProfesseur numero: " + this.numeroProfesseur+ super.toString() +  "Le grade est     : " + grade + "\nspatialité est   : " + this.spatialite + "\nNumero du groupe : " + this.numgroup;
     }
-		
+
+	//redefinition de la methode getNom pour quel il return le nom de la class
 	@Override
 	public String getclassname() {
 		return "professeur";

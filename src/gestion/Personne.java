@@ -1,13 +1,13 @@
 package gestion;
 import java.util.Scanner;
 
-
+//class personne 
 abstract public  class Personne {
     protected String nom;
     protected String prenom;
     protected int age;
     public static Scanner s=new Scanner(System.in);
-
+//constructeur 
     public Personne() {
     	try  {
     		s.nextLine();
@@ -23,7 +23,7 @@ abstract public  class Personne {
     		System.err.print("erreur");
     	}
     }
-
+    //définition des getters et setters
     public String getNom() {
         return nom;
     }
@@ -35,8 +35,6 @@ abstract public  class Personne {
     public String getPrenom() {
         return prenom;
     }
-    public abstract  String getclassname();
-    public abstract  int getNum();
 
     public void setPrenom(String prenom) {
         this.prenom = prenom;
@@ -49,7 +47,7 @@ abstract public  class Personne {
     public void setAge(int age) {
         this.age = age;
     }
-
+    //redefinition de la methode tostring pour l'utiliser a l'affichage des instance
     public String toString() {
         return "\nLe Nom           : " + nom + "\nPrénom           : " + prenom + "\nAge              : " + age+" ans\n";
     }
@@ -59,8 +57,10 @@ abstract public  class Personne {
 
 
 	}
-
+	//des methodes abstract qui nous a aide dans les fonctionnalité de la collection
 	public abstract int getNumeroGroup();
 	public abstract void setNumeroGroup(int n);
+    public abstract  String getclassname();
+    public abstract  int getNum();
 
 }

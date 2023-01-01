@@ -9,12 +9,13 @@ import Etudiant.Etudiant;
 import Professeur.Professeur;
 
 public class GestionPersonne {
+	//tableau des prsonnes
 	private List<Personne> personnes;
 
     public GestionPersonne() {
         personnes = new ArrayList<>();
     }
-
+    //methode pour supprimer un element du tableau
     public void SuppPersonne() {
     	Scanner s=new Scanner(System.in);
     	int e,n;
@@ -46,7 +47,7 @@ public class GestionPersonne {
 		}
 
     }
-    
+    //methode pour ajouter un element au tableau
     public void ajouterPersonne() {
     	int n;
     	Scanner s=new Scanner(System.in);
@@ -62,7 +63,8 @@ public class GestionPersonne {
 			System.out.println("\nchoix incorrect"); 
     	}
     }
-
+    
+    //methode pour modifier le numero du group
     public void modifiePersonne() {
     	int nb,n,ng,ver=0;
     	Scanner s=new Scanner(System.in);
@@ -107,6 +109,7 @@ public class GestionPersonne {
     	
     	
     }
+    //methode pour recherche un group des etudiants ou un etudiat,prof avec le numero "identifiant"
     public void recherchPersonne() {
     	int n,nb,ver=0;
     	Scanner s=new Scanner(System.in);
@@ -158,6 +161,7 @@ public class GestionPersonne {
 			System.out.println("\nchoix incorrect"); 
     	}
     }
+    //affichage a l'aide de la methode toString
     public void afficherPersonnes() {
         for (Personne p : personnes) {
             System.out.println(p.toString());
